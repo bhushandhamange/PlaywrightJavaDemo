@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @UsePlaywright
-public class SimplePWTestWithPageFixture {
+public class PageFixtureTest {
 
     @Test
     void verifyPageTitle(Page page){

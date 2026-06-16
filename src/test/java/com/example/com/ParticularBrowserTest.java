@@ -1,6 +1,7 @@
 package com.example.com;
 
 import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.AfterEach;
@@ -8,21 +9,27 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SimplePWTestCaseWithBeforeAfter {
+import java.util.Arrays;
+
+public class ParticularBrowserTest {
 
     Playwright playwright;
     Browser browser;
     Page page;
 
     @BeforeEach
-    void setup(){
+    public void setup(){
         playwright = Playwright.create();
-        browser = playwright.chromium().launch();
+        browser = playwright.chromium().launch(
+                new BrowserType.LaunchOptions()
+                        .setHeadless(false)
+                        .setArgs(Arrays.asList("--no-sandbox","--disable-extensions","--disable-gpu"))
+        );
         page = browser.newPage();
     }
 
     @AfterEach
-    void tearDown(){
+    public void tearDown(){
         browser.close();
         playwright.close();
     }
@@ -44,4 +51,5 @@ public class SimplePWTestCaseWithBeforeAfter {
 
         Assertions.assertTrue(count > 0);
     }
+
 }
