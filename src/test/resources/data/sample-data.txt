@@ -1,0 +1,7 @@
+Sample Data file
+This is a sample data file used for testing purposes. It contains multiple lines of text to simulate a real-world data file. Each line can represent a different record or entry, and the content can be used to verify the functionality of data processing algorithms, file reading/writing operations, and other related functionalities in software applications. The data can be modified as needed to fit specific testing scenarios or requirements.
+Line 1: This is the first line of the sample data file.
+Line 2: This is the second line of the sample data file.
+Line 3: This is the third line of the sample data file.
+Line 4: This is the fourth line of the sample data file.
+Line 5: This is the fifth line of the sample data file.
